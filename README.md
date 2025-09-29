@@ -59,3 +59,48 @@ Untuk menerapkan tag link, file HTML harus "memanggil" file CSS tersebut menggun
 - Kelas tambahan untuk membuat tombol "utama".
 - Hanya mengganti warna latar belakang tombol menjadi merah (menimpa warna abu-abu standar).
 - <img width="1920" height="1080" alt="5" src="https://github.com/user-attachments/assets/b77d71fe-0ecf-438e-93c9-23f7a57d9f10" />
+<br>
+<br>
+
+# Pertanyaan dan Tugas
+1. Lakukan eksperimen dengan mengubah dan menambah properti dan nilai pada kode CSS
+dengan mengacu pada CSS Cheat Sheet yang diberikan pada file terpisah dari modul ini.
+2. Apa perbedaan pendeklarasian CSS elemen h1 {...} dengan #intro h1 {...}? berikan
+penjelasannya!
+3. Apabila ada deklarasi CSS secara internal, lalu ditambahkan CSS eksternal dan inline CSS pada
+elemen yang sama. Deklarasi manakah yang akan ditampilkan pada browser? Berikan
+penjelasan dan contohnya!
+4. Pada sebuah elemen HTML terdapat ID dan Class, apabila masing-masing selector tersebut
+terdapat deklarasi CSS, maka deklarasi manakah yang akan ditampilkan pada browser?
+Berikan penjelasan dan contohnya!  < p id=paragraf-1" class="text-paragraf" >
+
+
+# Jawaban
+1. Menggunakan border-radius untuk mengubah bentuk radius sebuah blok 
+<img width="1920" height="1080" alt="Screenshot 2025-09-29 140547" src="https://github.com/user-attachments/assets/6b2e04fe-94c7-43ad-95eb-eaf4dc454e65" />
+
+2. h1 adalah aturan umum untuk semua judul level 1. Sedangkan #intro h1 adalah aturan spesifik yang hanya berlaku jika judul level 1 tersebut berada di dalam container #intro.
+
+3. Jika ada elemen yang sama dideklarasikan menggunakan CSS Internal, Eksternal, dan Inline, maka yang akan ditampilkan oleh browser adalah Inline CSS. Ini adalah aturan Spesifisitas dan Urutan Cascading CSS: Inline CSS memiliki prioritas tertinggi karena berada langsung di dalam elemen. Di bawah itu, CSS yang terakhir dimuat (baik Eksternal maupun Internal) akan diutamakan, tetapi biasanya Inline selalu menang dari Internal/Eksternal.
+
+Contoh:
+Misalnya memiliki elemen < p >:
+
+Lokasi CSS	Aturan
+CSS Eksternal/Internal	p { color: green; }
+Inline CSS	< p style=color: blue;" >Ini paragraf.< /p >
+Hasil: Teks paragraf akan berwarna BIRU karena Inline CSS menimpa aturan yang lebih umum (Eksternal/Internal).
+<img width="905" height="848" alt="Screenshot 2025-09-29 210009" src="https://github.com/user-attachments/assets/3a4a1810-1a40-4943-9906-b21577ffa09f" />
+
+4. Apabila sebuah elemen memiliki ID dan Class yang masing-masing mendeklarasikan properti yang sama, maka deklarasi dari ID Selector akan ditampilkan (ditampilkan dalam hal ini berarti ID akan menimpa Class).
+
+ID Selector (#) memiliki Spesifisitas lebih tinggi daripada Class Selector (.).
+
+Contoh:
+Misalnya Anda memiliki elemen <p id=paragraf-1" class="text-paragraf"> dan deklarasi CSS ini:
+
+Selector	Deklarasi CSS
+Class	.text-paragraf { color: red; }
+ID	#paragraf-1 { color: blue; }
+Hasil: Teks paragraf akan berwarna BIRU. Meskipun kedua aturan berlaku, ID Selector lebih "spesifik" (nilai spesifisitas ID = 100, Class = 10), sehingga aturan warna birunya yang akan diterapkan.
+<img width="887" height="856" alt="Screenshot 2025-09-29 210829" src="https://github.com/user-attachments/assets/930e5c45-68ba-4f31-9d42-808c583ed61e" />
